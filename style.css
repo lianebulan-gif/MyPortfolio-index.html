@@ -16,6 +16,30 @@ body {
     font-family: 'Quicksand', sans-serif;
     scroll-behavior: smooth;
 }
+.tagline {
+    font-size: 1.2rem;
+    color: #D4A373; /* O kahit anong pastel color mo */
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.section-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #5d5d5d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bio-container {
+    text-align: center;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    border: 1px dashed #ffb7b2;
+}
 
 /* Specific Page Overrides */
 body.skills-page, .contact-page {
@@ -138,190 +162,126 @@ h1 {
     color: white;
     transform: scale(1.1);
 }
+/* ========================================================================================================
+   4. SKILLS SECTION PAGE (UPDATED)
+   ========================================================================================================*/
 
-/* =========================================
-   4. SKILLS SECTION
-   ========================================= */
-/* Skills Section */
-
-/* Layout Alignment */
-
+/* Layout Alignment Fix */
 body.skills-page {
-
     background-color: #F8F1EA;
-
     font-family: 'Poppins', sans-serif;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: flex-start; 
-
+    /* Inalis ang display: flex dito para hindi mag-side-by-side */
     min-height: 100vh;
-
     padding-top: 100px;
-
-    padding-bottom: 50px;
-
-    overflow-y: auto; 
-
 }
 
-/* Navigation Bar Styling */
-
-.navbar {
-
+.content-wrapper {
     display: flex;
-
-    justify-content: space-between; 
-
-    align-items: center;
-
-    padding: 20px 10%; 
-
-    background-color: #fff;
-
-    position: fixed;
-
-    top: 0;
-
-    width: 80%; 
-
-    left: 0;
-
-    right: 0;
-
-    margin: 0 auto;
-
-    z-index: 1000;
-
+    flex-direction: column; /* Para pababa ang ayos */
+    align-items: center;    /* Para laging gitna ang cards */
+    width: 100%;
 }
 
-
-
-.nav-links {
-
-    display: flex;
-
-    list-style: none;
-
-    gap: 30px; 
-
-}
-
-
-
-.nav-links a {
-
-    text-decoration: none;
-
-    color: #888;
-
-    font-size: 16px;
-
-    transition: 0.3s;
-
-}
-
-
-
-.logo {
-
-    color: #FFB5A7; 
-
-    font-weight: bold;
-
-    font-size: 20px;
-
-}
-
-
-
-/* Centering the Skills Card */
-
-.skills-wrapper {
-
-    display: flex;
-
-    justify-content: center; 
-
-    padding-top: 120px; 
-
-    padding-bottom: 50px;
-
-}
-
-
-
-.skills-card {
-
+.skills-container {
     background: white;
-
     width: 90%;
-
     max-width: 650px;
-
     padding: 40px;
-
     border-radius: 30px;
-
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-
-    margin: 0 auto; 
-
+    margin-bottom: 50px; /* Space sa pagitan ng card at footer */
 }
 
-/* Progress Bar Base */
+/* Footer Styling para sa Skills Page */
+.main-footer {
+    width: 100%;
+    background-color: white;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 2px solid #F1E4D8;
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: auto; /* Itutulak nito ang footer sa pinakababa kung maikli ang content */
+}
+
+
+.page-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #6d6d6d;
+}
+
+.skill-category {
+    margin-bottom: 35px;
+}
+
+.cat-title {
+    font-size: 1.2rem;
+    color: #D4A373;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #F1E4D8;
+    padding-bottom: 5px;
+}
+
+/* --- Technical Skills Styles (with Progress Bars) --- */
+.skill-item {
+    margin-bottom: 15px;
+}
+
+.skill-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
 
 .progress-bg {
-
     background: #F1E4D8; 
     height: 12px;
-
     border-radius: 10px;
-
     overflow: hidden;
-
     width: 100%;
-
 }
-
-
 
 .progress-bar {
-
     height: 100%;
-
     border-radius: 10px;
-
     width: var(--w);
-
     animation: slideIn 1.5s ease-out forwards;
-
 }
-
-
-
-/* COLORS  */
 
 .tech { background-color: #FFB5A7; }   
 
-.soft { background-color: #D4A373; }   
+/* --- Soft Skills & Hobbies Styles (List Version) --- */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ginawang 2 columns para tipid sa space */
+    gap: 10px;
+}
 
-.hobby { background-color: #E3D5CA; }  
+.skills-list li {
+    background: #fffaf4;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    border-left: 5px solid #E3D5CA;
+    transition: 0.3s;
+}
 
-
+.skills-list li:hover {
+    transform: translateX(5px);
+    background: #F1E4D8;
+}
 
 /* ANIMATION LOGIC */
-
 @keyframes slideIn {
-
     from { width: 0; }
-
     to { width: var(--w); }
-
 }
+
 
 /* =========================================
    5. LESSONS SECTION
@@ -419,4 +379,45 @@ body.skills-page {
 .submit-btn:hover {
     background-color: #FF9A8B;
     transform: translateY(-2px);
+}
+
+/* Layout Fix for Footer */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Para sakop ang buong screen */
+}
+
+.contact-wrapper {
+    flex: 1; /* Hihilahin nito ang footer pababa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 60px;
+}
+
+/* Footer Styling */
+.main-footer {
+    background-color: white;
+    padding: 30px 10%;
+    text-align: center;
+    border-top: 2px solid #F1E4D8;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.footer-socials {
+    margin-top: 10px;
+    font-weight: 500;
+    color: #FFB5A7;
+}
+
+.footer-socials span {
+    cursor: pointer;
+    margin: 0 5px;
+    transition: 0.3s;
+}
+
+.footer-socials span:hover {
+    color: #D4A373;
 }
